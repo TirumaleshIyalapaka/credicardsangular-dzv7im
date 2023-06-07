@@ -1,0 +1,193 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="button" (click)="cardvalue = !cardvalue">
+    <button>Add Card</button>
+  </div>
+  <div class="cardall">
+    <div
+      class="card"
+      *ngFor="let card of creditcards; let i = index"
+      (click)="displayform(i)"
+    >
+      <!-- <app-creditcards></app-creditcards> -->
+      <div class="cards">
+        <div class="cardfront">
+          <div class="cardsinner">
+            <div class="innerone">{{ card.name }}</div>
+            <div class="innertwo">
+              <img
+                [src]="getBankLogo(card.bank)"
+                width="60px"
+                alt=" banklogo"
+              />
+            </div>
+          </div>
+          <div class="cardquote">
+            <div class="innercardsdiv">
+              <div>{{ card.card1 }}</div>
+              <div>{{ card.card2 }}</div>
+              <div>{{ card.card3 }}</div>
+              <div>{{ card.card4 }}</div>
+            </div>
+          </div>
+          <div class="cardexpdiv">{{ card.exp }}</div>
+          <div class="cardtype">
+            <div>
+              <img
+                [src]="getCardTypeLogo(card.cardType)"
+                width="60px"
+                alt="typelogo"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="cardback">
+          <div class="cardinner">
+            <div class="backinner"></div>
+            <div class="cvvdiv">
+              <div style="font-weight:lighter">CVV</div>
+              <div>{{ card.cvv }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="addcardform" *ngIf="cardvalue">
+    <div class="form-container">
+      <div class="row">
+        <h1>ADD CARD</h1>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form action="" [formGroup]="addcardform" (ngSubmit)="addcard()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                formControlName="name"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="cardnum">Card Number</label>
+              <input
+                type="number"
+                name="cardnum"
+                formControlName="cardnum"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="cardtype">Card Type</label>
+              <input
+                type="text"
+                name="cardtype"
+                formControlName="cardtype"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input
+                type="number"
+                name="cvv"
+                formControlName="cvv"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="bankname">Bank</label>
+              <input
+                type="text"
+                name="bankname"
+                formControlName="bankname"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exp">Expiry Date</label>
+              <input
+                type="text"
+                name="exp"
+                formControlName="exp"
+                class="form-control"
+              />
+            </div>
+            <button class="btn" type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="editcardform" *ngIf="editcardvalue">
+    <div class="form-container">
+      <div class="row"><h1>EDIT CARD</h1></div>
+      <div class="row">
+        <div class="col">
+          <form action="" [formGroup]="editcardform" (ngSubmit)="editcard(i)">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                [value]="creditcards[i].name"
+                type="text"
+                name="name"
+                formControlName="name"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="cardnum">Card Number</label>
+              <input
+                type="number"
+                name="cardnum"
+                formControlName="cardnum"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="cardtype">Card Type</label>
+              <input
+                type="text"
+                name="cardtype"
+                formControlName="cardtype"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input
+                type="number"
+                name="cvv"
+                formControlName="cvv"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="bankname">Bank</label>
+              <input
+                type="text"
+                name="bankname"
+                formControlName="bankname"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exp">Expiry Date</label>
+              <input
+                type="text"
+                name="exp"
+                formControlName="exp"
+                class="form-control"
+              />
+            </div>
+            <button class="btn" type="submit">Edit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

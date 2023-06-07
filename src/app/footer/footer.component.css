@@ -1,0 +1,16 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.cp-text {
+  color: white;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.1);
+}
+.footer p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  width: 100%;
+}

@@ -1,0 +1,130 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div class="bodydiv">
+  <div>
+    <div class="balance">
+      <div class="headdiv">
+        <div class="label">
+          <p>Current Balance</p>
+        </div>
+        <p *ngIf="this.currentTransactions.length != 0; else ElseBlock">
+          {{
+            this.currentTransactions[this.currentTransactions.length - 1]
+              .balance
+          }}
+          Rs.
+        </p>
+        <ng-template #ElseBlock>0</ng-template>
+      </div>
+    </div>
+    <div class="tablediv">
+      <div class="content">
+        <table>
+          <thead>
+            <td>DATE</td>
+            <td>TIME</td>
+            <td>TYPE</td>
+            <td>TRANSACTION</td>
+            <td>BALANCE</td>
+          </thead>
+          <tr *ngFor="let transaction of currentTransactions">
+            <td>{{ transaction.date }}</td>
+            <td>{{ transaction.time }}</td>
+            <td>
+              {{ transaction.type }}
+            </td>
+            <td *ngIf="transaction.type === 'credit'" style="color:limegreen">
+              {{ transaction.amount }}
+            </td>
+            <td *ngIf="transaction.type === 'debit'" style="color:red">
+              {{ transaction.amount }}
+            </td>
+            <td>{{ transaction.balance }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="btns">
+    <div class="btn" id="btn1" (click)="depositvalue = !depositvalue">
+      <button>Deposit</button>
+    </div>
+    <div class="btn" id="btn2" (click)="withdrawvalue = !withdrawvalue">
+      <button>Withdraw</button>
+    </div>
+    <div class="btn" id="btn3" (click)="transfervalue = !transfervalue">
+      <button>Transfer</button>
+    </div>
+  </div>
+  <div class="deposit-form" *ngIf="depositvalue">
+    <div class="row">
+      <h1>DEPOSIT</h1>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form action="" [formGroup]="depositform" (ngSubmit)="deposit()">
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              name="amount"
+              class="form-control"
+              formControlName="amount"
+            />
+            <button type="submit">Deposit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="withdraw-form" *ngIf="withdrawvalue">
+    <div class="row">
+      <h1>Withdraw</h1>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form action="" [formGroup]="withdrawform" (ngSubmit)="withdraw()">
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              name="amount"
+              class="form-control"
+              formControlName="amount"
+            />
+            <button>Withdraw</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="transfer-form" *ngIf="transfervalue">
+    <div class="row">
+      <h1>Transfer</h1>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form action="" [formGroup]="transferform" (ngSubmit)="transfer()">
+          <div class="form-group">
+            <label for="accno">Account No</label>
+            <input
+              type="number"
+              name="accno"
+              class="form-control"
+              formControlName="accno"
+            />
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              name="amount"
+              class="form-control"
+              formControlName="amount"
+            />
+            <button type="submit">Transfer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

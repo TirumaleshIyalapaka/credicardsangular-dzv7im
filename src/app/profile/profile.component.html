@@ -1,0 +1,73 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div class="profile">
+  <div class="profile-header">
+    <h3>My Profile</h3>
+  </div>
+  <div class="profile-content">
+    <div class="innerone">
+      <div class="one">
+        <div class="profilepic">
+          <img
+            src="https://cdn1.iconfinder.com/data/icons/family-avatar-solid-happy-party/1000/Asian_Male004-256.png"
+            alt=""
+          />
+        </div>
+        <div>
+          <h3>Personal Details</h3>
+          <div class="inner-content">
+            <div>
+              <div class="label">
+                <p>Name</p>
+              </div>
+              <div class="details">
+                <span>{{ user.name }}</span>
+              </div>
+            </div>
+            <div>
+              <div class="label">
+                <p>Address</p>
+              </div>
+              <div class="details">
+                <span>{{ user.address }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="innertwo">
+      <div class="two">
+        <h3>Contact Details</h3>
+        <div class="label">
+          <p>Contact No.</p>
+        </div>
+        <div class="details">
+          <span>{{ user.pno }}</span>
+        </div>
+        <div class="label">
+          <p>Email Address</p>
+        </div>
+        <div class="details">
+          <span>{{ user.mail }}</span>
+        </div>
+      </div>
+      <div class="three">
+        <h3>Account Details</h3>
+        <!-- <div class="label">
+          <p>User ID.</p>
+        </div>
+        <div class="details">
+          <span>{{ user.uid }}</span>
+        </div> -->
+        <div class="label">
+          <p>Account No.</p>
+        </div>
+        <div class="details">
+          <span>{{ user.accno }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

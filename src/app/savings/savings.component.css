@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Monomaniac+One&family=PT+Sans+Narrow&family=Quicksand:wght@300&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.balance {
+  background-color: rgb(202, 202, 202, 0.8);
+  height: 15%;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* padding-top: 5px; */
+  margin: 5px;
+  border-radius: 5px;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.content {
+  overflow-y: auto;
+  height: 400px;
+}
+
+.content thead {
+  position: sticky;
+  top: 0;
+}
+
+.balance p {
+  padding: 5px;
+}
+
+.balance .headdiv .label {
+  /* background-color: violet; */
+  color: black;
+  height: 25px;
+  /* border-radius: 5px; */
+  border-radius: 0px 0px 20px 20px;
+
+  display: flex;
+  align-items: center;
+}
+
+.tablediv {
+  background-color: aliceblue;
+  height: 80%;
+  width: max-content;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.tablediv td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.tablediv thead {
+  background-color: rgb(255, 0, 51);
+}
+
+.bodydiv {
+  height: 80vh;
+  /* overflow: hidden; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /* overflow-y: auto; */
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15%;
+}
+
+.btn {
+  padding: 5px;
+}
+button {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: large;
+  width: 100px;
+  height: 40px;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 1px 2px;
+}
+
+button:hover {
+  box-shadow: 5px 1px 4px;
+}
+
+.deposit-form,
+.withdraw-form,
+.transfer-form {
+  position: absolute;
+  background-color: darkgray;
+  /* opacity: 0.8; */
+  height: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.row {
+  margin: 10px;
+}
+
+.col {
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.row h1 {
+  text-align: center;
+  color: #323232;
+  font-family: 'Fjalla One', sans-serif;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin: 5px;
+}
+
+.form-control {
+  width: 300px;
+  height: 30px;
+
+  border-radius: 5px;
+  border-width: 1px;
+  /* border-color: transparent; */
+  outline: none;
+  background-color: transparent;
+  /* border: none; */
+  display: block;
+}

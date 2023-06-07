@@ -1,0 +1,138 @@
+<app-header></app-header>
+<div class="forms">
+  <div class="container">
+    <div class="form-container">
+      <div class="row">
+        <h1>REGISTER</h1>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form [formGroup]="registerForm" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                formControlName="name"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="text"
+                name="password"
+                formControlName="password"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <!-- <input
+                type="text"
+                name="gender"
+                formControlName="gender"
+                class="form-control"
+                required
+              /> -->
+              <select
+                name="gender"
+                id="gender"
+                formControlName="gender"
+                class="form-control"
+              >
+                <option value="" disabled>Please Select Option</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="age">AGE</label>
+              <input
+                type="number"
+                name="age"
+                formControlName="age"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="education">Education</label>
+              <!-- <input
+                type="text"
+                name="username"
+                formControlName="username"
+                class="form-control"
+                required
+              /> -->
+              <select
+                name=""
+                id=""
+                formControlName="education"
+                class="form-control"
+              >
+                <option value="" disabled>Please Select Option</option>
+                <option value="School">School</option>
+                <option value="College">College</option>
+                <option value="Graduation">Graduation</option>
+                <option value="Post Graduation">Post Graduation</option>
+                <option value="Masters">Masters</option>
+                <option value="None">None</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="dob">DOB</label>
+              <input
+                type="date"
+                name="dob"
+                formControlName="dob"
+                class="form-control"
+                required
+              />
+            </div>
+            <!-- REGISTRATION SUBMIT BUTTON  -->
+            <button class="btn" type="submit">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <p *ngFor="let data of match">
+      {{ data.name }} is fully matched with your unique code {{ data.uid }}
+    </p>
+    <p style="color:white" *ngFor="let data of semimatch">
+      {{ data.name }} is semi-matched with your unique code {{ data.uid }}
+    </p>
+  </div>
+
+  <div class="data">
+    <div class="row">
+      <div class="col">
+        <div class="table">
+          <table>
+            <thead>
+              <td>NAME</td>
+              <td>GENDER</td>
+              <td>AGE</td>
+              <td>EDUCATION</td>
+              <td>DOB</td>
+              <td>UNIQUE ID</td>
+            </thead>
+            <tr *ngFor="let user of Users">
+              <td>{{ user.name }}</td>
+              <td>{{ user.gender }}</td>
+              <td>{{ user.age }}</td>
+              <td>{{ user.education }}</td>
+              <td>{{ user.dob }}</td>
+              <td>{{ user.uid }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

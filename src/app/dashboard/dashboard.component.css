@@ -1,0 +1,29 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerbody {
+  height: 100%;
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(100px, 300px));
+  grid-template-rows: repeat(2, minmax(100px, 300px));
+}
+
+.inner {
+  margin: 20px;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* background-color: #565656; */
+  background-color: slategray;
+  border-radius: 20px;
+}

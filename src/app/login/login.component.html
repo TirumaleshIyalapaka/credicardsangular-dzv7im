@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="forms">
+  <div class="container">
+    <div class="form-container">
+      <div class="row">
+        <h1>LOGIN</h1>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form action="" [formGroup]="loginform" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label for="username">USERNAME</label>
+              <input
+                type="text"
+                name="username"
+                formControlName="username"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="from-group">
+              <label for="password">PASSWORD</label>
+              <input
+                type="text"
+                name="password"
+                formControlName="password"
+                class="form-control"
+                required
+              />
+            </div>
+            <p *ngIf="errorMessage" style="color:red">
+              INVALID USERNAME OR PASSWORD!
+            </p>
+            <button class="btn" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
